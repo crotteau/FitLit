@@ -1,7 +1,5 @@
 import userData from './usersSampleData'
-
 import hydrationSample from './hydrationSampleData';
-
 import sleepSample from './sleepSampleData';
 
 function getUserInfo(userID) {
