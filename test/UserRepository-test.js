@@ -55,8 +55,8 @@ describe('find user info', () => {
 
             expect(randomUser1).to.be.a('number')
             expect(randomUser2).to.be.a('number')
-            expect(randomUser1 <= userInfo.users.length).to.be.true
-            expect(randomUser2 <= userInfo.users.length).to.be.true
+            expect(1 <= randomUser1 <= userInfo.users.length).to.be.true
+            expect(1 <= randomUser2 <= userInfo.users.length).to.be.true
         });
     });
 
