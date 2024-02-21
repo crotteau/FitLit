@@ -1,8 +1,8 @@
 
 import { expect } from 'chai';
 import userData from './usersSampleData';
-import hydrationSample from './hydrationSample';
-import sleepSample from './sleepTestUsers';
+import hydrationSample from './hydrationSampleData';
+import sleepSample from './sleepSampleData';
 
 import {
     getUserInfo,
@@ -19,7 +19,7 @@ import {
     findWeeklyQuality,
     findHoursSlept,
     findSleepQuality
-} from '../test/userInfo';
+} from './testFunctions';
 
 describe('find user info', () => {
     let userInfo;
