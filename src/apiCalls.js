@@ -1,5 +1,6 @@
 
 import { initiateUserFunctions, initiateHydrationFunctions, initiateSleepFunctions } from "./scripts"
+import { displayError } from "./domUpdates"
 
 function getAllData() {
     const users = fetch('http://localhost:3001/api/v1/users')
@@ -21,9 +22,26 @@ function getAllData() {
         .catch(error => console.log(error))
 }
 
+function postData(userPost) {
+    fetch('http://localhost:3001/api/v1/hydration', {
+        method: 'POST',
+        body: JSON.stringify(userPost),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(resp => resp.json())
+    .then(json => console.log('POST', json))
+    .catch(err => {
+        console.log(err)
+        displayError()
+    })
+}
+
 
 
 
 export {
     getAllData,
+    postData
 }

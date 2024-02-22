@@ -3,6 +3,8 @@ import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findW
 
 import { getAllData } from './apiCalls.js';
 
+const error = document.querySelector('.error')
+
 const username = document.querySelector('.user-name')
 const address = document.querySelector('.address-cont')
 const strideData = document.querySelector('.stride-data')
@@ -32,7 +34,16 @@ hydrationSubmit.addEventListener('click', function(event) {
   event.preventDefault()
   grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
  })
- 
+
+hydrationFormDate.addEventListener('click', removeError)
+
+function displayError() {
+  error.innerHTML += "<span style='color: red'>There was an unexpected error please try again</span>"
+}
+
+function removeError() {
+  error.innerText = ""
+}
 
 function displayUserData(userInfo) {
   username.innerText = userInfo.name
@@ -149,4 +160,5 @@ export {
   displaySleepData,
   displaySteps,
   calculateAvgQuality,
+  displayError
 }

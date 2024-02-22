@@ -2,6 +2,7 @@
 import './apiCalls';
 import './css/styles.css';
 import { displayUserData, displayHydrationData, displaySteps, displaySleepData } from './domUpdates';
+import { postData } from './apiCalls.js';
 
 //(also need to link to it in the index.html)
 import './images/turing-logo.png';
@@ -167,13 +168,14 @@ function findWeeklyQuality(sleep, day) {
     return weeklyQuality
 }
 
+
 function grabHydrationData(selectedDate, ounces) {
     let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
-    let user = {userID: randomUserId,
+     let userPost = {userID: randomUserId,
             date: dateParsed,
             numOunces: ounces}
-            console.log(user)
-    return user
+            postData(userPost)
+    // return user
  }
  
 
@@ -193,5 +195,5 @@ export {
     findRecentWeek,
     calculateAvgQuality,
     calculateAvgHours,
-    grabHydrationData
+    grabHydrationData,
 }
