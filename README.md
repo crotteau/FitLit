@@ -23,7 +23,8 @@ Additional enhancements could include:
 ![Screenshot 2024-02-12 at 5 44 21 PM](https://github.com/AsherSpurr/fitlit/assets/144856487/cefcfe08-ebfa-4fb5-a610-14ef913e60c0)
 
 ### Technologies Used
-Fitlit relies on TDD using JavaScript and Mocha and Chai for all testing.
+Fitlit uses JavaScript, HTML, and CSS and relies on test driven development using Mocha Testing Framework & Chai Assertion Library.
+To run tests: `npm test` from associated root directory 
 
 ### Original Project Spec Page
 [Fitlit part 1](https://frontend.turing.edu/projects/module-2/fitlit-part-one-agile.html) from the Turing School of Software and Design
