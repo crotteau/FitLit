@@ -3,6 +3,8 @@ import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findW
 
 import { getAllData } from './apiCalls.js';
 
+import { userPost } from './scripts.js'
+
 const error = document.querySelector('.error')
 
 const username = document.querySelector('.user-name')
@@ -33,6 +35,7 @@ sleepSelect.addEventListener('change', () => { checkIfSelected(userHydration, we
 hydrationSubmit.addEventListener('click', function(event) {
   event.preventDefault()
   grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
+  displayDailyHydration()
  })
 
 hydrationFormDate.addEventListener('click', removeError)
@@ -96,10 +99,12 @@ function checkIfSelected(a, b, c) {
 }
 
 let userHydration;
+let latestHydration;
 
 function displayHydrationData(hydration) {
   userHydration = weeklyOunces(hydration)
-  dailyHydration.innerText = dailyOunces(hydration)
+  latestHydration = dailyOunces(hydration)
+  dailyHydration.innerText = latestHydration
 
   let dates = userHydration.map((object) => {
     return object.date
@@ -119,6 +124,11 @@ function displayHydrationData(hydration) {
   weeklyHydrationDate[4].value = dates[4]
   weeklyHydrationDate[5].value = dates[5]
   weeklyHydrationDate[6].value = dates[6]
+}
+
+function displayDailyHydration() {
+    latestHydration = `${userPost.numOunces} ounces of water!`
+    dailyHydration.innerText = latestHydration
 }
 
 let weeklyHoursSlept;

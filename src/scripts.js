@@ -168,14 +168,15 @@ function findWeeklyQuality(sleep, day) {
     return weeklyQuality
 }
 
-
+/* <><> POST Functions */
+var userPost;
 function grabHydrationData(selectedDate, ounces) {
     let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
-     let userPost = {userID: randomUserId,
+        userPost = {userID: randomUserId,
             date: dateParsed,
             numOunces: ounces}
             postData(userPost)
-    // return user
+    return userPost
  }
  
 
@@ -196,4 +197,5 @@ export {
     calculateAvgQuality,
     calculateAvgHours,
     grabHydrationData,
+    userPost
 }
