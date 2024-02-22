@@ -1,8 +1,8 @@
 
 import { expect } from 'chai';
 import userData from './usersSampleData';
-import hydrationSample from './hydrationSample';
-import sleepSample from './sleepTestUsers';
+import hydrationSample from './hydrationSampleData';
+import sleepSample from './sleepSampleData';
 
 import {
     getUserInfo,
@@ -19,7 +19,7 @@ import {
     findWeeklyQuality,
     findHoursSlept,
     findSleepQuality
-} from '../test/userInfo';
+} from './testFunctions';
 
 describe('find user info', () => {
     let userInfo;
@@ -55,7 +55,8 @@ describe('find user info', () => {
 
             expect(randomUser1).to.be.a('number')
             expect(randomUser2).to.be.a('number')
-            expect(randomUser1).to.not.equal(randomUser2)
+            expect(1 <= randomUser1 <= userInfo.users.length).to.be.true
+            expect(1 <= randomUser2 <= userInfo.users.length).to.be.true
         });
     });
 

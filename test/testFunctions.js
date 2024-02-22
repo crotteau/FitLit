@@ -1,9 +1,6 @@
-import userData from '../test/usersSampleData';
-
-import hydrationSample from '../test/hydrationSample';
-
-import sleepSample from '../test/sleepTestUsers';
-
+import userData from './usersSampleData'
+import hydrationSample from './hydrationSampleData';
+import sleepSample from './sleepSampleData';
 
 function getUserInfo(userID) {
     let userInfo = userData.users.find((user) => {
