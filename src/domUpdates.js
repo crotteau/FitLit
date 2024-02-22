@@ -1,5 +1,5 @@
 //NOTE: Your DOM manipulation will occur in this file
-import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours } from './scripts.js';
+import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData } from './scripts.js';
 
 import { getAllData } from './apiCalls.js';
 
@@ -13,6 +13,10 @@ const dailyHydration = document.querySelector('.daily-hydration-label')
 const weeklyHydrationDate = document.querySelectorAll('.hydration-date')
 const hydrationSelect = document.querySelector('.weekly-hydration-select')
 
+const hydrationSubmit = document.querySelector('.hydration-submit')
+const hydrationFormDate = document.querySelector('#hydration-date')
+const hydrationFormOunces = document.querySelector('#hydration-volume')
+
 const weeklySleepDate = document.querySelectorAll('.sleep-date')
 const sleepSelect = document.querySelector('.weekly-sleep-select')
 
@@ -24,6 +28,11 @@ const dailySleep = document.querySelector('.daily-sleep-data')
 window.addEventListener('load', getAllData)
 hydrationSelect.addEventListener('change', () => { checkIfSelected(userHydration, weeklyHoursSlept, weeklyQualitySlept) })
 sleepSelect.addEventListener('change', () => { checkIfSelected(userHydration, weeklyHoursSlept, weeklyQualitySlept) })
+hydrationSubmit.addEventListener('click', function(event) {
+  event.preventDefault()
+  grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
+ })
+ 
 
 function displayUserData(userInfo) {
   username.innerText = userInfo.name

@@ -167,6 +167,16 @@ function findWeeklyQuality(sleep, day) {
     return weeklyQuality
 }
 
+function grabHydrationData(selectedDate, ounces) {
+    let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
+    let user = {userID: randomUserId,
+            date: dateParsed,
+            numOunces: ounces}
+            console.log(user)
+    return user
+ }
+ 
+
 export {
     getUserInfo,
     calculateAverageSteps,
@@ -182,5 +192,6 @@ export {
     findWeeklyQuality,
     findRecentWeek,
     calculateAvgQuality,
-    calculateAvgHours
+    calculateAvgHours,
+    grabHydrationData
 }
