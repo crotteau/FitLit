@@ -256,6 +256,7 @@ h2 {
   height: 80vh;
   justify-content: space-between;
   overflow-x: hidden;
+  overflow-y: hidden;
   width: 100%;
 }
 
@@ -279,13 +280,13 @@ h2 {
   border-radius: 20px 20px 20px 0px;
   background-color: #D4B7F8;
   width: 45vw;
-  height: 20%;
+  height: 30%;
   font-family: 'Bungee', sans-serif;
   text-align: center;
   font-size: 200%;
   color: #3d3d4e;
   box-shadow: 20px 20px #3d3d4e;
-  margin: 5% 0%;
+  margin: 3% 0%;
 }
 
 .daily-hydration-cont {
@@ -294,18 +295,18 @@ h2 {
   text-align: center;
   padding-top: 5%;
   width: 35vw;
-  height: 15%;
-  margin: 5% 0%;
+  height: 30%;
+  margin: 3% 0%;
   box-shadow: 20px 20px #3d3d4e;
 }
 
 .hydration-user-input {
   border-radius: 20px 20px 20px 0px;
-  background-color: #B7DAF7;
+  background-color: #FBE5A8;
   padding-top: 5%;
   width: 35vw;
-  height: 22%;
-  margin: 5% 0%;
+  height: 30%;
+  margin: 3% 0%;
   box-shadow: 20px 20px #3d3d4e;
   font-size: 175%;
   display: flex;
@@ -324,7 +325,7 @@ h2 {
 }
 
 .hydration-input {
-  margin-left: 1em;
+  margin-left: 2em;
   margin-top: 1em;
   font-family: 'Bungee', sans-serif;
 }
@@ -368,10 +369,14 @@ h2 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding-bottom: 90px;
-  margin-right: 2em;
+  border-radius: 20px 20px 0px 20px;
+  background-color: #B7DAF7;
+  padding-top: 10%;
+  padding-bottom: 0;
+  width: 46vw;
+  height: 10vh;
+  box-shadow: 20px 20px #3d3d4e;
 }
-
 .avg-quality-data {
   margin: 0;
   font-size: xx-large;
@@ -461,16 +466,6 @@ h2 {
   box-shadow: 20px 20px #3d3d4e;
 }
 
-.avg-sleep-cont {
-  border-radius: 20px 20px 0px 20px;
-  background-color: #B7DAF7;
-  padding-top: 10%;
-  padding-bottom: 0;
-  width: 46vw;
-  height: 10vh;
-  margin-right: 0;
-  box-shadow: 20px 20px #3d3d4e;
-}
 
 table,
 tr,
