@@ -19,6 +19,9 @@ import '../src/images/profile-image9.png'
 import '../src/images/profile-image10.png'
 import '../src/images/water-drop.png'
 import '../src/images/sleepy-star.png'
+import '../src/images/water-droplet.png'
+import '../src/images/moon.png'
+
 
 /* <><> API Data <><> */
 function initiateUserFunctions(userData) {
@@ -163,24 +166,6 @@ function findWeeklyQuality(sleep, day) {
     }
     return weeklyQuality
 }
-
-/* <><> UNUSED FUNCS (required by project specs) <><>
-
-function findHoursSlept(sleep, day) {
-    let targetUser = sleep.sleepData.filter((user) => {
-        return user.userID === randomUserId
-    }).find((user) => { return user.date === day })
-    return targetUser.hoursSlept
-}
-
-function findSleepQuality(sleep, day) {
-    let targetUser = sleep.sleepData.filter((user) => {
-        return user.userID === randomUserId
-    }).find((user) => { return user.date === day })
-    return targetUser.sleepQuality
-}
-*/
-
 
 export {
     getUserInfo,
