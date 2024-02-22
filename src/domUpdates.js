@@ -13,6 +13,7 @@ const dailyHydration = document.querySelector('.daily-hydration-label')
 const weeklyHydrationDate = document.querySelectorAll('.hydration-date')
 const hydrationSelect = document.querySelector('.weekly-hydration-select')
 
+
 const weeklySleepDate = document.querySelectorAll('.sleep-date')
 const sleepSelect = document.querySelector('.weekly-sleep-select')
 
