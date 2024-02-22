@@ -285,6 +285,7 @@ h2 {
   font-size: 200%;
   color: #3d3d4e;
   box-shadow: 20px 20px #3d3d4e;
+  margin: 5% 0%;
 }
 
 .daily-hydration-cont {
@@ -294,9 +295,34 @@ h2 {
   padding-top: 5%;
   width: 35vw;
   height: 15%;
-  margin-bottom: 20%;
-  margin-top: 20%;
+  margin: 5% 0%;
   box-shadow: 20px 20px #3d3d4e;
+}
+
+.hydration-user-input {
+  border-radius: 20px 20px 20px 0px;
+  background-color: #B7DAF7;
+  padding-top: 5%;
+  width: 35vw;
+  height: 15%;
+  margin: 5% 0%;
+  box-shadow: 20px 20px #3d3d4e;
+  font-size: 150%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .hydration-user-date {
+  padding-right: 1em;
+} */
+
+.hydration-user-volume {
+  padding-right: 3em;
+}
+
+.hydration-input {
+  margin-left: 1em;
 }
 
 #hydration-data {

@@ -22,8 +22,6 @@ function getAllData() {
 }
 
 
-
-
 export {
     getAllData,
 }
