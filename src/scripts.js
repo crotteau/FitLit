@@ -33,8 +33,6 @@ function initiateUserFunctions(userData) {
 
 function initiateHydrationFunctions(hydrationData) {
     averageOunces(hydrationData)
-    dailyOunces(hydrationData)
-    dailyOunces(hydrationData)
     displayHydrationData(hydrationData)
 }
 
@@ -51,6 +49,7 @@ var randomUserId;
 function getRandomUser(userData) {
     randomUserId = Math.floor(Math.random() * userData.users.length)
     getUserInfo(randomUserId, userData)
+
 }
 
 function getUserInfo(randomUserId, userData) {
@@ -79,13 +78,14 @@ function averageOunces(hydration) {
     return Math.round(sum / targetUser.length)
 }
 
-function dailyOunces(hydration) {
-    let targetUser = hydration.hydrationData.filter((user) => {
-        return user.userID === randomUserId
-    });
-    let index = targetUser.length - 1
-    return `${targetUser[index].numOunces} ounces of water!`
-};
+// function dailyOunces(hydration) {
+//     let targetUser = hydration.hydrationData.filter((user) => {
+//         return user.userID === randomUserId
+//     });
+//     let index = targetUser.length - 1
+//     // return `${targetUser[index].numOunces} ounces of water!`
+//     return targetUser[index]
+// };
 
 function weeklyOunces(hydration) {
     let week = []
@@ -170,22 +170,40 @@ function findWeeklyQuality(sleep, day) {
 
 /* <><> POST Functions */
 var userPost;
+var currentDate;
+
 function grabHydrationData(selectedDate, ounces) {
     let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
         userPost = {userID: randomUserId,
             date: dateParsed,
             numOunces: ounces}
             postData(userPost)
+            console.log('date!!', userPost.date)
     return userPost
  }
+
+function findTodaysDate() {
+    let date = new Date()
+    let day = date.getDate()
+    let month = date.getMonth() + 1
+    let year = date.getFullYear()
+    if (month < 10) {
+        currentDate = `${year}/0${month}/${day}`
+        console.log(currentDate, '!!!')
+    } else {
+        currentDate = `${year}/${month}/${day}`
+        console.log(currentDate, '!!')
+    }
+    return currentDate
+ }
  
+ findTodaysDate()
 
 export {
     getUserInfo,
     calculateAverageSteps,
     getRandomUser,
     averageOunces,
-    dailyOunces,
     weeklyOunces,
     initiateUserFunctions,
     initiateHydrationFunctions,
@@ -197,5 +215,6 @@ export {
     calculateAvgQuality,
     calculateAvgHours,
     grabHydrationData,
-    userPost
+    userPost,
+    currentDate
 }

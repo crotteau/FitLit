@@ -3,7 +3,7 @@ import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findW
 
 import { getAllData } from './apiCalls.js';
 
-import { userPost } from './scripts.js'
+import { userPost, currentDate } from './scripts.js'
 
 const error = document.querySelector('.error')
 
@@ -14,6 +14,7 @@ const stepGoal = document.querySelector('.steps-goal-data')
 const avgStepGoal = document.querySelector('.global-steps-goal-data')
 
 const dailyHydration = document.querySelector('.daily-hydration-label')
+const dailyHydrationLabel = document.querySelector('.daily-hydration-label1')
 const weeklyHydrationDate = document.querySelectorAll('.hydration-date')
 const hydrationSelect = document.querySelector('.weekly-hydration-select')
 
@@ -36,12 +37,14 @@ hydrationSubmit.addEventListener('click', function(event) {
   event.preventDefault()
   grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
   displayDailyHydration()
+  resetInputField()
  })
 
 hydrationFormDate.addEventListener('click', removeError)
+hydrationFormOunces.addEventListener('click', removeError)
 
 function displayError() {
-  error.innerHTML += "<span style='color: red'>There was an unexpected error please try again</span>"
+  error.innerHTML = "<span style='color: red'>There was an unexpected error please try again</span>"
 }
 
 function removeError() {
@@ -99,12 +102,10 @@ function checkIfSelected(a, b, c) {
 }
 
 let userHydration;
-let latestHydration;
 
 function displayHydrationData(hydration) {
   userHydration = weeklyOunces(hydration)
-  latestHydration = dailyOunces(hydration)
-  dailyHydration.innerText = latestHydration
+
 
   let dates = userHydration.map((object) => {
     return object.date
@@ -127,8 +128,18 @@ function displayHydrationData(hydration) {
 }
 
 function displayDailyHydration() {
-    latestHydration = `${userPost.numOunces} ounces of water!`
-    dailyHydration.innerText = latestHydration
+  if (userPost.numOunces && (userPost.date === currentDate)) {
+    dailyHydration.innerText = `${userPost.numOunces} ounces of water!`
+  } else if (userPost.date !==currentDate) {
+    error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter today's date!</span>"
+  } else if (!userPost.numOunces) {
+    error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter ounces drank!</span>"
+  }
+}
+
+function resetInputField() {
+  hydrationFormDate.value = ''
+  hydrationFormOunces.value = ''
 }
 
 let weeklyHoursSlept;
