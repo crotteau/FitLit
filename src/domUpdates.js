@@ -1,5 +1,5 @@
 //NOTE: Your DOM manipulation will occur in this file
-import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData } from './scripts.js';
+import { calculateAverageSteps, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData } from './scripts.js';
 
 import { getAllData } from './apiCalls.js';
 
@@ -12,9 +12,9 @@ const address = document.querySelector('.address-cont')
 const strideData = document.querySelector('.stride-data')
 const stepGoal = document.querySelector('.steps-goal-data')
 const avgStepGoal = document.querySelector('.global-steps-goal-data')
+const userFriends = document.querySelector('.user-friends')
 
 const dailyHydration = document.querySelector('.daily-hydration-label')
-const dailyHydrationLabel = document.querySelector('.daily-hydration-label1')
 const weeklyHydrationDate = document.querySelectorAll('.hydration-date')
 const hydrationSelect = document.querySelector('.weekly-hydration-select')
 
@@ -33,12 +33,12 @@ const dailySleep = document.querySelector('.daily-sleep-data')
 window.addEventListener('load', getAllData)
 hydrationSelect.addEventListener('change', () => { checkIfSelected(userHydration, weeklyHoursSlept, weeklyQualitySlept) })
 sleepSelect.addEventListener('change', () => { checkIfSelected(userHydration, weeklyHoursSlept, weeklyQualitySlept) })
-hydrationSubmit.addEventListener('click', function(event) {
+hydrationSubmit.addEventListener('click', function (event) {
   event.preventDefault()
   grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
   displayDailyHydration()
   resetInputField()
- })
+})
 
 hydrationFormDate.addEventListener('click', removeError)
 hydrationFormOunces.addEventListener('click', removeError)
@@ -60,6 +60,13 @@ function displayUserData(userInfo) {
     Email: ${userInfo.email} <br>
     Address: ${userInfo.address} <br>
   </address>`
+}
+
+function displayFriends(friends) {
+  for (var i = 0; i < friends.length; i++) {
+    userFriends.innerHTML += 
+    `<li class='friend'> ${friends[i]}</li>`
+  }
 }
 
 function displaySteps(userData) {
@@ -130,10 +137,10 @@ function displayHydrationData(hydration) {
 function displayDailyHydration() {
   if (userPost.numOunces && (userPost.date === currentDate)) {
     dailyHydration.innerText = `${userPost.numOunces} ounces of water!`
-  } else if (userPost.date !==currentDate) {
+  } else if (userPost.date !== currentDate) {
     error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter today's date!</span>"
   } else if (!userPost.numOunces) {
-    error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter ounces drank!</span>"
+    error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter ounces!</span>"
   }
 }
 
@@ -181,5 +188,6 @@ export {
   displaySleepData,
   displaySteps,
   calculateAvgQuality,
-  displayError
+  displayError,
+  displayFriends
 }

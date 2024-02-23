@@ -1,7 +1,7 @@
 
 import './apiCalls';
 import './css/styles.css';
-import { displayUserData, displayHydrationData, displaySteps, displaySleepData } from './domUpdates';
+import { displayUserData, displayHydrationData, displaySteps, displaySleepData, displayFriends } from './domUpdates';
 import { postData } from './apiCalls.js';
 
 //(also need to link to it in the index.html)
@@ -57,6 +57,19 @@ function getUserInfo(randomUserId, userData) {
         return user.id === randomUserId
     })
     displayUserData(targetUser)
+    findFriends(targetUser, userData)
+}
+
+function findFriends(targetUser, userData) {
+    var friends = [];
+    let friendIds = targetUser.friends
+    for (var i = 0; i < friendIds.length; i++) {
+      let friend = userData.users.find(user => {
+            return user.id === friendIds[i]
+        })
+        friends.push(friend.name)
+    }
+    displayFriends(friends)
 }
 
 /* <><> Average Steps <><> */
@@ -77,15 +90,6 @@ function averageOunces(hydration) {
     }, 0)
     return Math.round(sum / targetUser.length)
 }
-
-// function dailyOunces(hydration) {
-//     let targetUser = hydration.hydrationData.filter((user) => {
-//         return user.userID === randomUserId
-//     });
-//     let index = targetUser.length - 1
-//     // return `${targetUser[index].numOunces} ounces of water!`
-//     return targetUser[index]
-// };
 
 function weeklyOunces(hydration) {
     let week = []
@@ -174,13 +178,15 @@ var currentDate;
 
 function grabHydrationData(selectedDate, ounces) {
     let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
-        userPost = {userID: randomUserId,
-            date: dateParsed,
-            numOunces: ounces}
-            postData(userPost)
-            console.log('date!!', userPost.date)
+    userPost = {
+        userID: randomUserId,
+        date: dateParsed,
+        numOunces: ounces
+    }
+    postData(userPost)
+    console.log('date!!', userPost.date)
     return userPost
- }
+}
 
 function findTodaysDate() {
     let date = new Date()
@@ -189,15 +195,13 @@ function findTodaysDate() {
     let year = date.getFullYear()
     if (month < 10) {
         currentDate = `${year}/0${month}/${day}`
-        console.log(currentDate, '!!!')
     } else {
         currentDate = `${year}/${month}/${day}`
-        console.log(currentDate, '!!')
     }
     return currentDate
- }
- 
- findTodaysDate()
+}
+
+findTodaysDate()
 
 export {
     getUserInfo,
@@ -216,5 +220,5 @@ export {
     calculateAvgHours,
     grabHydrationData,
     userPost,
-    currentDate
+    currentDate,
 }
