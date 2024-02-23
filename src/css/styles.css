@@ -461,6 +461,10 @@ th {
   justify-content: end;
 }
 
+.motivation {
+  max-height: 100vh;
+}
+
 .slider {
     width: 30vw;
     height: 10vh;
@@ -506,11 +510,16 @@ th {
   top: 10%;
 }
 
+.planet-png {
+  z-index: 0;
+}
+
 .take-off-cont {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: absolute;
+  bottom: 0px;
 }
 
 .take-off {
@@ -519,8 +528,69 @@ th {
   width: 5vw;
   height: 10vh;
   position: sticky;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
 }
 
+
+@keyframes anim-0 {
+  from {
+    height: 10vh;
+  }
+
+  to {
+    height: 10vh;
+  }
+}
+
+@keyframes anim-1 {
+  from {
+    height: 10vh;
+  }
+
+  to {
+    height: 25vh;
+
+  }
+}
+@keyframes anim-2 {
+  from {
+    height: 10vh;
+  }
+
+  to {
+    height: 35vh;
+  }
+}
+
+@keyframes anim-3 {
+  from {
+    height: 10vh;
+  }
+
+  to {
+    height: 45vh;
+  }
+}
+@keyframes anim-4 {
+  from {
+    height: 10vh;
+  }
+
+  to {
+    height: 55vh;
+  }
+}
+@keyframes anim-5 {
+  from {
+    height: 10vh;
+  }
+
+  to {
+    height: 65vh;
+  }
+}
 
 .slide-cont {
   position: relative;
@@ -534,7 +604,7 @@ th {
   margin-bottom: 15%;
 }
 
-.splatter-png {
+.wavy-corner-png {
   width: 60vw;
   /* height: 100%; */
   overflow-y: hidden;

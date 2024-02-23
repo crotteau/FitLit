@@ -1,7 +1,7 @@
 
 import './apiCalls';
 import './css/styles.css';
-import { displayUserData, displayHydrationData, displaySteps, displaySleepData } from './domUpdates';
+import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff } from './domUpdates';
 import { postData } from './apiCalls.js';
 
 //(also need to link to it in the index.html)
@@ -179,9 +179,42 @@ function grabHydrationData(selectedDate, ounces) {
             date: dateParsed,
             numOunces: ounces}
             postData(userPost)
-    // return user
  }
  
+function animateMotivation(inputValue) {
+    storeMotivation(inputValue)
+    let value = inputValue
+    switch(value) {
+      case '0': 
+        takeOff.style.animationName = "anim-0";
+        break;
+      case '2': 
+        takeOff.style.animationName = "anim-1";
+        break;
+      case '4': 
+        takeOff.style.animationName = "anim-2";
+        break;
+      case '6': 
+        takeOff.style.animationName = "anim-3";
+        break;
+      case '8': 
+        takeOff.style.animationName = "anim-4";
+        break;
+      case '10': 
+        takeOff.style.animationName = "anim-5";
+        break;
+    }
+}
+
+function storeMotivation(inputValue) {
+    let dateN = new Date()
+    let motivation = {
+        userID: randomUserId,
+        motivation: inputValue,
+        date: dateN
+    }
+    return motivation
+}
 
 export {
     getUserInfo,
@@ -200,4 +233,5 @@ export {
     calculateAvgQuality,
     calculateAvgHours,
     grabHydrationData,
+    animateMotivation
 }
