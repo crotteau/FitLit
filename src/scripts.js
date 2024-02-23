@@ -22,6 +22,10 @@ import '../src/images/water-drop.png'
 import '../src/images/sleepy-star.png'
 import '../src/images/water-droplet.png'
 import '../src/images/moon.png'
+import '../src/images/space-ship.png'
+import '../src/images/wavy-corner.png'
+import '../src/images/planet.png'
+import '../src/images/splatter.png'
 
 
 /* <><> API Data <><> */
