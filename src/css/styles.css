@@ -60,7 +60,19 @@ nav {
 .link {
   margin-left: 1em;
   font-size: larger;
+  color: #3d3d4e;
+}
+
+.link:hover {
   color: #BC74F3;
+} 
+
+select:hover {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }
 
 /*<><> Main user Data <><>*/
