@@ -1,5 +1,5 @@
 //NOTE: Your DOM manipulation will occur in this file
-import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData, animateMotivation } from './scripts.js';
+import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData } from './scripts.js';
 
 import { getAllData } from './apiCalls.js';
 
@@ -42,34 +42,34 @@ hydrationFormDate.addEventListener('click', removeError)
 
 sliderInput.addEventListener('change', () => { animateMotivation(sliderInput.value) })
 
-// function doShit(inputValue) {
-//   console.log(inputValue)
-//   console.log(typeof(inputValue))
-//   // if(inputValue === '2') {
-//   //   takeOff.style.animationName = "anim-1"
-//   // }
-//   let value = inputValue
-//   switch(value) {
-//     case '0': 
-//       takeOff.style.animationName = "anim-0";
-//       break;
-//     case '2': 
-//       takeOff.style.animationName = "anim-1";
-//       break;
-//     case '4': 
-//       takeOff.style.animationName = "anim-2";
-//       break;
-//     case '6': 
-//       takeOff.style.animationName = "anim-3";
-//       break;
-//     case '8': 
-//       takeOff.style.animationName = "anim-4";
-//       break;
-//     case '10': 
-//       takeOff.style.animationName = "anim-5";
-//       break;
-//   }
-// }
+function animateMotivation(inputValue) {
+  console.log(inputValue)
+  console.log(typeof(inputValue))
+  // if(inputValue === '2') {
+  //   takeOff.style.animationName = "anim-1"
+  // }
+  let value = inputValue
+  switch(value) {
+    case '0': 
+      takeOff.style.animationName = "anim-0";
+      break;
+    case '2': 
+      takeOff.style.animationName = "anim-1";
+      break;
+    case '4': 
+      takeOff.style.animationName = "anim-2";
+      break;
+    case '6': 
+      takeOff.style.animationName = "anim-3";
+      break;
+    case '8': 
+      takeOff.style.animationName = "anim-4";
+      break;
+    case '10': 
+      takeOff.style.animationName = "anim-5";
+      break;
+  }
+}
 
 function displayError() {
   error.innerHTML += "<span style='color: red'>There was an unexpected error please try again</span>"
