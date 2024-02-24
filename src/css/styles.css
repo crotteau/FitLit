@@ -293,6 +293,11 @@ h2 {
   float: inline-start;
 }
 
+h3 {
+  margin: 0;
+  font-size: 1em;
+}
+
 .weekly-hydration-select {
   border-radius: 20px 20px 20px 0px;
   background-color: #D4B7F8;
