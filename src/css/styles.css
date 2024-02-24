@@ -63,7 +63,6 @@ nav {
   color: #BC74F3;
 }
 
-
 /*<><> Main user Data <><>*/
 /*<> Left <>*/
 
@@ -391,7 +390,7 @@ th {
   padding-bottom: 0;
   width: 46vw;
   height: 10vh;
-  margin-right: 0;
+  /* margin-right: 0; */
   box-shadow: 20px 20px #3d3d4e;
   display: flex;
   flex-direction: column;
@@ -495,7 +494,6 @@ th {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .slider {

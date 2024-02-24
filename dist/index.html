@@ -86,11 +86,11 @@
           <div class="error"></div>
           <button class="hydration-submit">Submit</button>
         </div>
-        <div class="daily-hydration-cont">
+        <dl class="daily-hydration-cont">
           <dt class="daily-hydration-label1">Today you drank</dt>
-          <dd class="daily-hydration-label">Daily Hydration</dt>
-        </div>
-        <select class="weekly-hydration-select">
+          <dd class="daily-hydration-label">Daily Hydration</dd>
+        </dl>
+        <select class="weekly-hydration-select" aria-labelledby="state">
           <option class="hydration-select">Click to Select a Date</option>
           <option class="hydration-date" value="weekly-date-data1"></option>
           <option class="hydration-date" value="weekly-date-data2"></option>
@@ -126,17 +126,17 @@
         </div>
       </div>
       <article class="sleep-cont-right">
-        <div class="daily-sleep-cont">
+        <dl class="daily-sleep-cont">
           <dt class="daily-sleep-label">Last Night You Slept</dt>
           <dd class="daily-sleep-data">DAILY SLEEP DATA</dd>
-        </div>
-        <div class="avg-sleep-cont">
+        </dl>
+        <dl class="avg-sleep-cont">
           <dt class="avg-quality-label">Average Sleep Quality</dt>
           <dd class="avg-quality-data">N/A</dd>
           <dt class="avg-hours-label">Average Sleep Hours</dt>
           <dd class="avg-hours-data">N/A</dd>
-        </div>
-        <select class="weekly-sleep-select">
+        </dl>
+        <select class="weekly-sleep-select" aria-labelledby="state">
           <option class="sleep-select">Click to Select a Date</option>
           <option class="sleep-date" value="weekly-date-data1"></option>
           <option class="sleep-date" value="weekly-date-data2"></option>
@@ -163,9 +163,9 @@
         <!-- <div class="right-style"> -->
         <h2 class="motivation-heading" id="h2-motivation">Motivation</h2>
         <div class="slide-cont">
-          <label class="slider-label" for="slider">How motivated are you today?</label>
-          <input class="slider" name="slider" type="range" min="0" max="10" value="0" step="2" id="myRange">
-          <img class="wavy-corner-png" src="./images/wavy-corner.png" />
+          <label class="slider-label" for="slider">Slide to indicate level of motivation?</label>
+          <input class="slider" name="slider" type="range" min="0" max="10" value="0" step="2" id="slider">
+          <img class="wavy-corner-png" src="./images/wavy-corner.png" alt="Wavy static image that fills corner or page" />
         </div>
         <!-- </div> -->
       </section>

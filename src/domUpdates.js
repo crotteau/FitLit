@@ -27,7 +27,7 @@ const avgHoursData = document.querySelector('.avg-hours-data')
 
 const dailySleep = document.querySelector('.daily-sleep-data')
 
-const sliderInput = document.querySelector('#myRange')
+const sliderInput = document.querySelector('#slider')
 const takeOff = document.querySelector('.take-off')
 
 window.addEventListener('load', getAllData)
