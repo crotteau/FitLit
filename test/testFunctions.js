@@ -133,6 +133,16 @@ function findSleepQuality(sleep, day) {
     return targetUser.sleepQuality
 }
 
+function storeMotivation(userID, inputValue) {
+    let dateN = new Date()
+    let motivation = {
+        userID: userID,
+        motivation: inputValue,
+        date: dateN
+    }
+    return motivation
+}
+
 export {
     getUserInfo,
     calculateAverageSteps,
@@ -148,4 +158,5 @@ export {
     findWeeklyQuality,
     findHoursSlept,
     findSleepQuality,
+    storeMotivation
 }
