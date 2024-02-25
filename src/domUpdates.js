@@ -140,7 +140,7 @@ function displayDailyHydration() {
   } else if (userPost.date !== currentDate) {
     error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter today's date!</span>"
   } else if (!userPost.numOunces) {
-    error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter ounces!</span>"
+    error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter ounces drank!</span>"
   }
 }
 
