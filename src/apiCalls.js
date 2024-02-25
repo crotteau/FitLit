@@ -39,8 +39,6 @@ function postData(userPost) {
 }
 
 
-
-
 export {
     getAllData,
     postData
