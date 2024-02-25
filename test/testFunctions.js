@@ -160,6 +160,5 @@ export {
     findWeeklyQuality,
     findHoursSlept,
     findSleepQuality,
-    findFriends,
-    findTodaysDate
+    findFriends
 }
