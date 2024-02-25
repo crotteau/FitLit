@@ -80,9 +80,17 @@ nav {
   flex-direction: column;
   margin-left: 4%;
   margin-bottom: 6em;
-  margin-top: 15em;
-  width: 25%;
+  margin-top: 6em;
+  width: 30%;
   padding-left: 3em;
+  overflow-x: visible;
+}
+
+.name-cont {
+  width: auto;
+  height: auto;
+  overflow-x: visible;
+  overflow-wrap: break-word;
 }
 
 .name-cont {
@@ -96,6 +104,7 @@ nav {
   font-size: 3.5rem;
   font-family: 'Bungee', sans-serif;
   filter: none;
+  text-align: left;
 }
 
 .address-cont {
@@ -104,10 +113,26 @@ nav {
   float: right;
   padding-right: 2em;
   padding-bottom: 2em;
-  overflow-x: auto;
-  font-size: 1.2em;
+  overflow-x: visible;
+  font-size: 1.4em;
 }
 
+.user-friends {
+  background-color: #FBE5A8;
+  font-size: 2rem;
+  width: 10em;
+  height: 6em;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-radius: 10px;
+  box-shadow: -8px 13px 20px #3d3d4e;
+}
+
+.friend {
+  font-size: 1rem;
+  margin-left: 8%;
+  margin-top: 2%;
+}
 .profile-image {
   display: flex;
   align-items: center;
@@ -189,7 +214,7 @@ dt {
   animation-name: stride-animation;
   animation-duration: .5s;
   animation-direction: normal;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 14px 14px 20px #3d3d4e;
 }
 
 .steps-goal-label {
@@ -199,7 +224,7 @@ dt {
   animation-name: steps-goal-animation;
   animation-duration: 1s;
   animation-direction: normal;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 14px 14px 20px #3d3d4e;
 }
 
 .global-steps-goal-label {
@@ -209,7 +234,7 @@ dt {
   animation-name: global-steps-goal-animation;
   animation-duration: 1.5s;
   animation-direction: normal;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 14px 14px 20px #3d3d4e;
 }
 
 .banner-box {
@@ -241,9 +266,10 @@ h2 {
 .hydration-container {
   display: flex;
   flex-direction: row-reverse;
-  height: 80vh;
+  height: 100vh;
   justify-content: space-between;
   overflow-x: hidden;
+  overflow-y: hidden;
   width: 100%;
 }
 
@@ -277,16 +303,22 @@ h2 {
   float: inline-start;
 }
 
+h3 {
+  margin: 0;
+  font: 1em;
+}
+
 .weekly-hydration-select {
   border-radius: 20px 20px 20px 0px;
   background-color: #D4B7F8;
   width: 45vw;
-  height: 20%;
+  height: 20vh;
   font-family: 'Bungee', sans-serif;
   text-align: center;
   font-size: 200%;
   color: #3d3d4e;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 10px 14px 20px #3d3d4e;
+  margin: 5% 0%;
 }
 
 .daily-hydration-cont {
@@ -295,10 +327,60 @@ h2 {
   text-align: center;
   padding-top: 5%;
   width: 35vw;
-  height: 15%;
-  margin-bottom: 20%;
-  margin-top: 20%;
-  box-shadow: 20px 20px #3d3d4e;
+  height: 18vh;
+  margin: 5% 0%;
+  box-shadow: 10px 14px 20px #3d3d4e;
+}
+
+.hydration-user-input {
+  border-radius: 20px 20px 20px 0px;
+  background-color: #FBE5A8;
+  padding-top: 5%;
+  width: 35vw;
+  height: 20vh;
+  margin-bottom: 5%;
+  margin-top: 10%;
+  box-shadow: 10px 14px 20px #3d3d4e;
+  font-size: 175%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hydration-inputs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 1em;
+  font-size: 80%;
+}
+
+label {
+  margin-left: 1em;
+}
+
+input {
+  width: 9em;
+  margin-left: 1em;
+
+    &:hover {
+    cursor: pointer;
+  }
+}
+
+.hydration-submit {
+  margin-left: 2em;
+  margin-top: 1.5em;
+  height: 3em;
+  width: 7em;
+  border-radius: 10px;
+  font-size:medium;
+  font-family: 'Bungee', sans-serif;
+  
+    &:hover {
+      cursor: pointer;
+      background-color: #e2b948;
+    }
 }
 
 .daily-hydration-label {
@@ -372,7 +454,7 @@ th {
   height: 12vh;
   margin-bottom: 0;
   margin-top: 10%;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 6px 13px 20px #3d3d4e;
 }
 
 .daily-sleep-label {
@@ -397,8 +479,9 @@ th {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  padding-bottom: 90px;
+  margin-right: 2em;
 }
-
 .avg-quality-data {
   margin: 0;
   font-size: xx-large;
@@ -422,44 +505,18 @@ th {
   text-align: center;
   font-size: 200%;
   color: #3d3d4e;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 6px 13px 20px #3d3d4e;
 }
 
-.moon-png,
-.water-png {
-  height: 100%;
-  width: 100%;
-  padding-right: 2vw;
-}
-
-.motivation {
-  max-height: 100vh;
-}
-
-.motivation-heading {
-  margin-bottom: 15%;
-}
-
-.motivation-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 0;
-  float: left;
-  min-height: 120vh;
-  width: fit-content;
-}
-
-.space-ship-png {
-  height: 50%;
-  width: 50%;
-  position: sticky;
-  top: 10%;
-}
-
-.planet-png {
-  z-index: 0;
+.avg-sleep-cont {
+  border-radius: 20px 20px 0px 20px;
+  background-color: #B7DAF7;
+  padding-top: 10%;
+  padding-bottom: 0;
+  width: 46vw;
+  height: 10vh;
+  margin-right: 0;
+  box-shadow: 6px 13px 20px #3d3d4e;
 }
 
 .take-off-cont {

@@ -1,7 +1,7 @@
 
 import './apiCalls';
 import './css/styles.css';
-import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff } from './domUpdates';
+import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff, displayFriends, displayDailyHydration } from './domUpdates';
 import { postData } from './apiCalls.js';
 
 //(also need to link to it in the index.html)
@@ -37,8 +37,6 @@ function initiateUserFunctions(userData) {
 
 function initiateHydrationFunctions(hydrationData) {
     averageOunces(hydrationData)
-    dailyOunces(hydrationData)
-    dailyOunces(hydrationData)
     displayHydrationData(hydrationData)
 }
 
@@ -55,6 +53,7 @@ var randomUserId;
 function getRandomUser(userData) {
     randomUserId = Math.floor(Math.random() * userData.users.length)
     getUserInfo(randomUserId, userData)
+
 }
 
 function getUserInfo(randomUserId, userData) {
@@ -62,6 +61,19 @@ function getUserInfo(randomUserId, userData) {
         return user.id === randomUserId
     })
     displayUserData(targetUser)
+    findFriends(targetUser, userData)
+}
+
+function findFriends(targetUser, userData) {
+    var friends = [];
+    let friendIds = targetUser.friends
+    for (var i = 0; i < friendIds.length; i++) {
+      let friend = userData.users.find(user => {
+            return user.id === friendIds[i]
+        })
+        friends.push(friend.name)
+    }
+    displayFriends(friends)
 }
 
 /* <><> Average Steps <><> */
@@ -82,14 +94,6 @@ function averageOunces(hydration) {
     }, 0)
     return Math.round(sum / targetUser.length)
 }
-
-function dailyOunces(hydration) {
-    let targetUser = hydration.hydrationData.filter((user) => {
-        return user.userID === randomUserId
-    });
-    let index = targetUser.length - 1
-    return `${targetUser[index].numOunces} ounces of water!`
-};
 
 function weeklyOunces(hydration) {
     let week = []
@@ -172,25 +176,64 @@ function findWeeklyQuality(sleep, day) {
     return weeklyQuality
 }
 
-
+/* <><> POST Functions */
+var currentDate;
 function grabHydrationData(selectedDate, ounces) {
     let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
      let userPost = {userID: randomUserId,
             date: dateParsed,
             numOunces: ounces}
             postData(userPost)
- }
+            displayDailyHydration(userPost)
+        }
+        
+function findTodaysDate() {
+    let date = new Date()
+    let day = date.getDate()
+    let month = date.getMonth() + 1
+    let year = date.getFullYear()
+    if (month < 10) {
+        currentDate = `${year}/0${month}/${day}`
+    } else {
+        currentDate = `${year}/${month}/${day}`
+    }
+    return currentDate
+}
 
-function storeMotivation(userID, inputValue) {
+function animateMotivation(inputValue) {
+    storeMotivation(inputValue)
+    let value = inputValue
+    switch(value) {
+      case '0': 
+        takeOff.style.animationName = "anim-0";
+        break;
+      case '2': 
+        takeOff.style.animationName = "anim-1";
+        break;
+      case '4': 
+        takeOff.style.animationName = "anim-2";
+        break;
+      case '6': 
+        takeOff.style.animationName = "anim-3";
+        break;
+      case '8': 
+        takeOff.style.animationName = "anim-4";
+        break;
+      case '10': 
+        takeOff.style.animationName = "anim-5";
+        break;
+    }
+}
+
+function storeMotivation(inputValue) {
     let dateN = new Date()
     let motivation = {
-      userID: userID,
-      motivation: inputValue,
-      date: dateN
-    };
-
-    return motivation;
-  }
+        userID: randomUserId,
+        motivation: inputValue,
+        date: dateN
+    }
+    return motivation
+}
 
 
 export {
@@ -198,7 +241,6 @@ export {
     calculateAverageSteps,
     getRandomUser,
     averageOunces,
-    dailyOunces,
     weeklyOunces,
     initiateUserFunctions,
     initiateHydrationFunctions,
@@ -210,5 +252,7 @@ export {
     calculateAvgQuality,
     calculateAvgHours,
     grabHydrationData,
-    storeMotivation
+    animateMotivation,
+    findTodaysDate,
+    currentDate
 }
