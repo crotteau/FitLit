@@ -11,14 +11,6 @@ This website was made with the goal of implementing the use of fetch API for the
 - $ `npm start`
 - Navigate to http://localhost:8080/ in your browser
 
-### Next steps 
-Additional enhancements could include:
-- Incorporate user authorization for real people to use
-- Adjust data placement and display to enhance readability
-- Rethink selective color use to draw attention towards key information
-- Provide a secure user portal that displays personal contact information
-- Display friends list on a separate page with their current goals, allowing interaction between friends.
-
 ### Screenshots
 ![Screenshot 2024-02-12 at 5 44 21 PM](https://github.com/AsherSpurr/fitlit/assets/144856487/cefcfe08-ebfa-4fb5-a610-14ef913e60c0)
 
@@ -27,11 +19,29 @@ Fitlit is made with JavaScript, HTML, and CSS. It's built using test-driven deve
 - To run tests: `npm test` from associated root directory 
 
 ### Original Project Spec Page
-[Fitlit part 1](https://frontend.turing.edu/projects/module-2/fitlit-part-one-agile.html) from the Turing School of Software and Design
+A two part project for Turing School School of Software and Design: 
+[Fitlit part 1](https://frontend.turing.edu/projects/module-2/fitlit-part-one-agile.html)
+[Fitlit part 2](https://frontend.turing.edu/projects/module-2/fitlit-part-two-agile.html)
 
+### Next steps 
+Additional enhancements could include:
+- Incorporate user authorization for real people to use
+- Adjust data placement and display to enhance readability
+- Rethink selective color use to draw attention towards key information
+- Provide a secure user portal that displays personal contact information
+- Display friends list on a separate page with their current goals, allowing interaction between friends.
+  
 ### Contributors 
 [Asher Spurr](https://github.com/AsherSpurr)
 
 [Laura Long](https://github.com/lalonggone)
 
 [Megan Crotteau](https://github.com/crotteau)
+
+# FitLit Group Project: Part 2
+
+### Motivation Feature
+
+### Accessibility
+
+### Usability
