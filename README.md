@@ -1,4 +1,4 @@
-# FitLit Week 8 Group Project: Part 1
+# FitLit Week 8 Group Project
 A site for users to view their personal fitness journey and track fitness goals.
 
 ### Background 
@@ -11,8 +11,12 @@ This website was made with the goal of implementing the use of fetch API for the
 - $ `npm start`
 - Navigate to http://localhost:8080/ in your browser
 
-### Screenshots
-![Screenshot 2024-02-12 at 5 44 21 PM](https://github.com/AsherSpurr/fitlit/assets/144856487/cefcfe08-ebfa-4fb5-a610-14ef913e60c0)
+### Contributors 
+[Asher Spurr](https://github.com/AsherSpurr)
+
+[Laura Long](https://github.com/lalonggone)
+
+[Megan Crotteau](https://github.com/crotteau)
 
 ### Technologies Used
 Fitlit is made with JavaScript, HTML, and CSS. It's built using test-driven development with Mocha Testing Framework & Chai Assertion Library.
@@ -20,8 +24,14 @@ Fitlit is made with JavaScript, HTML, and CSS. It's built using test-driven deve
 
 ### Original Project Spec Page
 A two part project for Turing School School of Software and Design: 
-[Fitlit part 1](https://frontend.turing.edu/projects/module-2/fitlit-part-one-agile.html)
-[Fitlit part 2](https://frontend.turing.edu/projects/module-2/fitlit-part-two-agile.html)
+- [Fitlit part 1](https://frontend.turing.edu/projects/module-2/fitlit-part-one-agile.html)
+- [Fitlit part 2](https://frontend.turing.edu/projects/module-2/fitlit-part-two-agile.html)
+
+## FitLit: Part 1
+
+### Screenshots
+![Screenshot 2024-02-12 at 5 44 21 PM](https://github.com/AsherSpurr/fitlit/assets/144856487/cefcfe08-ebfa-4fb5-a610-14ef913e60c0)
+
 
 ### Next steps 
 Additional enhancements could include:
@@ -31,14 +41,10 @@ Additional enhancements could include:
 - Provide a secure user portal that displays personal contact information
 - Display friends list on a separate page with their current goals, allowing interaction between friends.
   
-### Contributors 
-[Asher Spurr](https://github.com/AsherSpurr)
 
-[Laura Long](https://github.com/lalonggone)
+# FitLit: Part 2
 
-[Megan Crotteau](https://github.com/crotteau)
-
-# FitLit Group Project: Part 2
+### Screenshot - Updated CSS and Additional Features
 
 ### Motivation Feature
 
