@@ -30,6 +30,7 @@ const avgHoursData = document.querySelector('.avg-hours-data')
 
 const dailySleep = document.querySelector('.daily-sleep-data')
 
+const sliderInput = document.querySelector('#myRange')
 const takeOff = document.querySelector('.take-off')
 
 window.addEventListener('load', getAllData)
@@ -44,6 +45,8 @@ hydrationSubmit.addEventListener('click', function (event) {
 
 hydrationFormDate.addEventListener('click', removeError)
 hydrationFormOunces.addEventListener('click', removeError)
+
+sliderInput.addEventListener('change', () => { animateMotivation(sliderInput.value) })
 
 function displayError() {
   error.innerHTML = "<span style='color: red'>There was an unexpected error please try again</span>"
