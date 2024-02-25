@@ -5,7 +5,7 @@ function getAllData() {
     const users = fetch('https://fitlit-api.herokuapp.com/api/v1/users')
         .then(resp => resp.json())
 
-    const hydration = fetch('https://fitlit-api.herokuapp.com/api/v1/hydration')
+    const hydration = fetch('http://localhost:3001/api/v1/hydration')
         .then(resp => resp.json())
 
     const sleep = fetch('https://fitlit-api.herokuapp.com/api/v1/sleep')
@@ -20,6 +20,8 @@ function getAllData() {
         })
         .catch(error => console.log(error))
 }
+
+
 
 
 export {

@@ -1,7 +1,7 @@
 
 import './apiCalls';
 import './css/styles.css';
-import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff, displayFriends, takeOff } from './domUpdates';
+import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff, displayFriends } from './domUpdates';
 import { postData } from './apiCalls.js';
 
 //(also need to link to it in the index.html)
@@ -179,7 +179,6 @@ function findWeeklyQuality(sleep, day) {
 /* <><> POST Functions */
 var userPost;
 var currentDate;
-console.log('userPost scripts', pull userPost)
 function grabHydrationData(selectedDate, ounces) {
     let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
      let userPost = {userID: randomUserId,
