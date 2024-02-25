@@ -475,13 +475,12 @@ th {
   width: 46vw;
   height: 10vh;
   margin-right: 0;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 6px 13px 20px #3d3d4e;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   padding-bottom: 90px;
-  margin-right: 2em;
 }
 
 .avg-quality-data {
@@ -507,7 +506,7 @@ th {
   text-align: center;
   font-size: 200%;
   color: #3d3d4e;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 6px 13px 20px #3d3d4e;
 }
 
 .moon-png,
