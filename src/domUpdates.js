@@ -1,9 +1,9 @@
 //NOTE: Your DOM manipulation will occur in this file
-import { calculateAverageSteps, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData, animateMotivation } from './scripts.js';
+import { calculateAverageSteps, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData, animateMotivation, findTodaysDate } from './scripts.js';
 
 import { getAllData } from './apiCalls.js';
 
-import { userPost, currentDate } from './scripts.js'
+import { currentDate } from './scripts.js'
 
 const error = document.querySelector('.error')
 
@@ -30,7 +30,6 @@ const avgHoursData = document.querySelector('.avg-hours-data')
 
 const dailySleep = document.querySelector('.daily-sleep-data')
 
-const sliderInput = document.querySelector('#myRange')
 const takeOff = document.querySelector('.take-off')
 
 window.addEventListener('load', getAllData)
@@ -39,42 +38,11 @@ sleepSelect.addEventListener('change', () => { checkIfSelected(userHydration, we
 hydrationSubmit.addEventListener('click', function (event) {
   event.preventDefault()
   grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
-  displayDailyHydration()
+  findTodaysDate()
   resetInputField()
 })
 
 hydrationFormDate.addEventListener('click', removeError)
-
-sliderInput.addEventListener('change', () => { animateMotivation(sliderInput.value) })
-
-// function doShit(inputValue) {
-//   console.log(inputValue)
-//   console.log(typeof(inputValue))
-//   // if(inputValue === '2') {
-//   //   takeOff.style.animationName = "anim-1"
-//   // }
-//   let value = inputValue
-//   switch(value) {
-//     case '0': 
-//       takeOff.style.animationName = "anim-0";
-//       break;
-//     case '2': 
-//       takeOff.style.animationName = "anim-1";
-//       break;
-//     case '4': 
-//       takeOff.style.animationName = "anim-2";
-//       break;
-//     case '6': 
-//       takeOff.style.animationName = "anim-3";
-//       break;
-//     case '8': 
-//       takeOff.style.animationName = "anim-4";
-//       break;
-//     case '10': 
-//       takeOff.style.animationName = "anim-5";
-//       break;
-//   }
-// }
 hydrationFormOunces.addEventListener('click', removeError)
 
 function displayError() {
@@ -168,7 +136,7 @@ function displayHydrationData(hydration) {
   weeklyHydrationDate[6].value = dates[6]
 }
 
-function displayDailyHydration() {
+function displayDailyHydration(userPost) {
   if (userPost.numOunces && (userPost.date === currentDate)) {
     dailyHydration.innerText = `${userPost.numOunces} ounces of water!`
   } else if (userPost.date !== currentDate) {
@@ -219,6 +187,7 @@ function displaySleepData(sleep) {
 export {
   displayUserData,
   displayHydrationData,
+  displayDailyHydration,
   displaySleepData,
   displaySteps,
   calculateAvgQuality,

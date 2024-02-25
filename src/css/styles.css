@@ -83,6 +83,14 @@ nav {
   margin-top: 6em;
   width: 30%;
   padding-left: 3em;
+  overflow-x: visible;
+}
+
+.name-cont {
+  width: auto;
+  height: auto;
+  overflow-x: visible;
+  overflow-wrap: break-word;
 }
 
 .name-cont {
@@ -102,6 +110,7 @@ nav {
 .address-cont {
   font-family: 'DotGothic16', sans-serif;
   font-style: normal;
+  float: right;
   padding-right: 2em;
   padding-bottom: 2em;
   overflow-x: visible;
@@ -318,17 +327,60 @@ h3 {
   text-align: center;
   padding-top: 5%;
   width: 35vw;
-  height: 15%;
-  margin-bottom: 20%;
-  margin-top: 20%;
-  box-shadow: 20px 20px #3d3d4e;
+  height: 18vh;
+  margin: 5% 0%;
+  box-shadow: 10px 14px 20px #3d3d4e;
 }
 
-#hydration-data {
-  font-size: 6em;
-  position: absolute;
-  top: 35%;
-  left: 25%
+.hydration-user-input {
+  border-radius: 20px 20px 20px 0px;
+  background-color: #FBE5A8;
+  padding-top: 5%;
+  width: 35vw;
+  height: 20vh;
+  margin-bottom: 5%;
+  margin-top: 10%;
+  box-shadow: 10px 14px 20px #3d3d4e;
+  font-size: 175%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hydration-inputs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 1em;
+  font-size: 80%;
+}
+
+label {
+  margin-left: 1em;
+}
+
+input {
+  width: 9em;
+  margin-left: 1em;
+
+    &:hover {
+    cursor: pointer;
+  }
+}
+
+.hydration-submit {
+  margin-left: 2em;
+  margin-top: 1.5em;
+  height: 3em;
+  width: 7em;
+  border-radius: 10px;
+  font-size:medium;
+  font-family: 'Bungee', sans-serif;
+  
+    &:hover {
+      cursor: pointer;
+      background-color: #e2b948;
+    }
 }
 
 .daily-hydration-label {
@@ -402,7 +454,7 @@ th {
   height: 12vh;
   margin-bottom: 0;
   margin-top: 10%;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 6px 13px 20px #3d3d4e;
 }
 
 .daily-sleep-label {
@@ -427,13 +479,8 @@ th {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  border-radius: 20px 20px 0px 20px;
-  background-color: #B7DAF7;
-  padding-top: 10%;
-  padding-bottom: 0;
-  width: 46vw;
-  height: 10vh;
-  box-shadow: 6px 13px 20px #3d3d4e;
+  padding-bottom: 90px;
+  margin-right: 2em;
 }
 .avg-quality-data {
   margin: 0;
@@ -461,41 +508,15 @@ th {
   box-shadow: 6px 13px 20px #3d3d4e;
 }
 
-.moon-png,
-.water-png {
-  height: 100%;
-  width: 100%;
-  padding-right: 2vw;
-}
-
-.motivation {
-  max-height: 100vh;
-}
-
-.motivation-heading {
-  margin-bottom: 15%;
-}
-
-.motivation-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 0;
-  float: left;
-  min-height: 120vh;
-  width: fit-content;
-}
-
-.space-ship-png {
-  height: 50%;
-  width: 50%;
-  position: sticky;
-  top: 10%;
-}
-
-.planet-png {
-  z-index: 0;
+.avg-sleep-cont {
+  border-radius: 20px 20px 0px 20px;
+  background-color: #B7DAF7;
+  padding-top: 10%;
+  padding-bottom: 0;
+  width: 46vw;
+  height: 10vh;
+  margin-right: 0;
+  box-shadow: 6px 13px 20px #3d3d4e;
 }
 
 .take-off-cont {

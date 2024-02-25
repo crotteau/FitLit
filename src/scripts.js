@@ -1,7 +1,7 @@
 
 import './apiCalls';
 import './css/styles.css';
-import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff, displayFriends } from './domUpdates';
+import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff, displayFriends, displayDailyHydration } from './domUpdates';
 import { postData } from './apiCalls.js';
 
 //(also need to link to it in the index.html)
@@ -177,7 +177,6 @@ function findWeeklyQuality(sleep, day) {
 }
 
 /* <><> POST Functions */
-var userPost;
 var currentDate;
 function grabHydrationData(selectedDate, ounces) {
     let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
@@ -185,7 +184,7 @@ function grabHydrationData(selectedDate, ounces) {
             date: dateParsed,
             numOunces: ounces}
             postData(userPost)
-            return userPost
+            displayDailyHydration(userPost)
         }
         
 function findTodaysDate() {
@@ -265,6 +264,5 @@ export {
     grabHydrationData,
     animateMotivation,
     findTodaysDate,
-    userPost,
     currentDate
 }
