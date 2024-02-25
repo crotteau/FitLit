@@ -1,7 +1,7 @@
 
 import './apiCalls';
 import './css/styles.css';
-import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff, displayFriends } from './domUpdates';
+import { displayUserData, displayHydrationData, displaySteps, displaySleepData, takeOff, displayFriends, takeOff } from './domUpdates';
 import { postData } from './apiCalls.js';
 
 //(also need to link to it in the index.html)
