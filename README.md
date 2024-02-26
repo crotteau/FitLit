@@ -47,7 +47,17 @@ Additional enhancements could include:
 ### Screenshots - Updated CSS and Additional Features
 
 ### Motivation Feature
+Our assigned feature for part 2 was to allow the user to input how motivated they're feeling for any given day. We chose to create a simple design where the user can input their motivation level using a sliding scale. A little rocket animation will rise based on the input.  
+In the future we woud like to implement an API to display an encouraging quote if a user's motivation is below the halfway mark.
 
 ### Accessibility
+To assess our app's accessibility, we used exensions such as WAVE, Lighthouse, and Colorblind to look for areas of improvement. We also ensured that the user can tab through the app without using a mouse. Currently, our accessibility score is 96% according to Lighthouse. 
 
 ### Usability
+We conducted user testing with our peers and listed below is some feedback we received.
+- Users want interactivity with static elements. Eg: changing profile picture, changing address
+- The correlation between the weekly date and data is not clear Eg: Click to select a date - then that data displaying next to it
+- More clarity needed for sleep quality scale Eg: defining range and meaning of scale
+- Exposed issues with creating dynamic and consistent CSS styling 
+- Parameters for daily hydration input could be more strict - prevent negative numbers and excessive number length
+- Links needed to be darker, the color was confusing to user’s since it matched the background
