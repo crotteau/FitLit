@@ -170,6 +170,6 @@ export {
     findWeeklyQuality,
     findHoursSlept,
     findSleepQuality,
-    storeMotivation
+    storeMotivation,
     findFriends
 }
