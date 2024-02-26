@@ -38,8 +38,8 @@ hydrationSelect.addEventListener('change', () => { checkIfSelected(userHydration
 sleepSelect.addEventListener('change', () => { checkIfSelected(userHydration, weeklyHoursSlept, weeklyQualitySlept) })
 hydrationSubmit.addEventListener('click', function (event) {
   event.preventDefault()
-  grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
   findTodaysDate()
+  grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
   resetInputField()
 })
 

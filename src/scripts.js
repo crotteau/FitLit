@@ -193,9 +193,9 @@ function grabHydrationData(selectedDate, ounces) {
 
 function findTodaysDate() {
     let date = new Date()
-    let day = date.getDate()
-    let month = date.getMonth() + 1
-    let year = date.getFullYear()
+    let day = String(date.getDate())
+    let month = String(date.getMonth() + 1)
+    let year = String(date.getFullYear())
     if (month < 10) {
         currentDate = `${year}/0${month}/${day}`
     } else {
