@@ -60,9 +60,12 @@ nav {
 .link {
   margin-left: 1em;
   font-size: larger;
-  color: #BC74F3;
+  color: #3d3d4e;
 }
 
+.link:hover {
+  color:#BC74F3
+}
 /*<><> Main user Data <><>*/
 /*<> Left <>*/
 
@@ -648,6 +651,24 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 input[type=range]:focus::-webkit-slider-thumb {
   border: 2px #3d3d4e solid;
+}
+
+input[type=range]::-moz-range-track {
+  width: 500px;
+  height: 50px;
+  background: #FFDC7A;
+  border: none;
+  border-radius: 15px;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  background-color: #FAC8EC;
+  border-radius: 15px;
+  margin-top: -1px;
 }
 
 @keyframes anim-0 {
