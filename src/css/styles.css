@@ -50,7 +50,7 @@ h1 {
 }
 
 nav {
-  width: 20%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   margin-left: 1em;
@@ -60,10 +60,12 @@ nav {
 .link {
   margin-left: 1em;
   font-size: larger;
-  color: #BC74F3;
+  color: #3d3d4e;
 }
 
-
+.link:hover {
+  color:#BC74F3
+}
 /*<><> Main user Data <><>*/
 /*<> Left <>*/
 
@@ -245,7 +247,7 @@ dt {
   border-top: 3px #3d3d4e solid;
   border-bottom: 3px #3d3d4e solid;
   height: 15vh;
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 500;
   font-family: 'Sixtyfour', sans-serif;
   margin-bottom: 20px;
@@ -253,7 +255,7 @@ dt {
 
 h2 {
   font-family: "Bungee Outline", sans-serif;
-  font-size: 8em;
+  font-size: 7em;
   text-align: right;
   padding-right: 5vw;
   margin-top: 2.5vh;
@@ -291,8 +293,8 @@ h2 {
 #hydration-data {
   font-size: 6em;
   position: absolute;
-  top: 35%;
-  left: 25%
+  top: 30%;
+  left: 20%;                    
 }
 
 .hydration-left-cont {
@@ -390,10 +392,11 @@ input {
 /*<><><><> SLEEP <><><><>*/
 #sleep-banner {
   margin-top: 1.4em;
+  width: 100%;
 }
 
 .main-sleep-container {
-  height: 100vh;
+  height: 120vh;
 }
 
 .sleep-cont-left {
@@ -437,7 +440,7 @@ th {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  float: inline-end;
+  /* float: inline-end; */
   justify-content: space-around;
   min-height: 100%;
 }
@@ -474,14 +477,14 @@ th {
   width: 46vw;
   height: 10vh;
   margin-right: 0;
-  box-shadow: 20px 20px #3d3d4e;
+  box-shadow: 6px 13px 20px #3d3d4e;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   padding-bottom: 90px;
-  margin-right: 2em;
 }
+
 .avg-quality-data {
   margin: 0;
   font-size: xx-large;
@@ -508,16 +511,46 @@ th {
   box-shadow: 6px 13px 20px #3d3d4e;
 }
 
-.avg-sleep-cont {
-  border-radius: 20px 20px 0px 20px;
-  background-color: #B7DAF7;
-  padding-top: 10%;
-  padding-bottom: 0;
-  width: 46vw;
-  height: 10vh;
-  margin-right: 0;
-  box-shadow: 6px 13px 20px #3d3d4e;
+.moon-png,
+.water-png {
+  height: 100%;
+  width: 100%;
+  padding-right: 2vw;
 }
+
+.motivation {
+  max-height: 120vh;
+}
+
+.motivation-heading {
+  margin-bottom: 15%;
+  position: static;
+  z-index: 1;
+}
+
+.motivation-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  margin-left: 0;
+  float: left;
+  /* min-height: 120vh; */
+  width: fit-content;
+  flex-wrap: nowrap;
+}
+
+.space-ship-png {
+  height: 50%;
+  width: 50%;
+  position: sticky;
+  top: 10%;
+}
+
+.planet-png {
+  z-index: 0;
+}
+
 
 .take-off-cont {
   display: flex;
@@ -545,6 +578,7 @@ th {
   float: right;
   min-height: 100%;
   width: fit-content;
+  /* position: sticky; */
 }
 
 .slide-cont {
@@ -577,7 +611,9 @@ th {
   width: 60vw;
   overflow-y: hidden;
   overflow-x: hidden;
-  margin-bottom: -305px;
+  margin-bottom: -260px;
+  /* margin-right: -107px; */
+  border-radius: 3%;
   margin-top: 100px;
   opacity: 80%;
 }
@@ -615,6 +651,24 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 input[type=range]:focus::-webkit-slider-thumb {
   border: 2px #3d3d4e solid;
+}
+
+input[type=range]::-moz-range-track {
+  width: 500px;
+  height: 50px;
+  background: #FFDC7A;
+  border: none;
+  border-radius: 15px;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  background-color: #FAC8EC;
+  border-radius: 15px;
+  margin-top: -1px;
 }
 
 @keyframes anim-0 {
