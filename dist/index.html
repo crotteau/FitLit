@@ -26,6 +26,7 @@
         <div class="links-cont">
           <a class="link" href="#hydration-link">Hydration</a>
           <a class="link" href="#sleep-link">Sleep</a>
+          <a class="link" href="#motivation-link">Motivation</a>
         </div>
       </nav>
     </header>
@@ -36,6 +37,7 @@
             <h2 class="user-name">USER <br> NAME</h2>
           </div>
           <div class="address-cont"></div>
+          <ul class="user-friends">My Friends</ul>
         </article>
         <figure class="profile-image">
           <img src="./images/profile-image1.png" alt="sample profile picture" class="profile-png" height="300vh"
@@ -73,22 +75,20 @@
       </div>
       </div>
       <div class="hydration-left-cont">
-        <div class="hydration-user-input"> Add your hydration data!
-          <form class="hydration-user-date">
+        <div class="hydration-user-input">
+          <h3>Add today's hydration data!</h3>
+          <form class="hydration-inputs">
             <label for="hydration-date">Date:</label>
             <input type="date" name="hydration-date" id="hydration-date">
-          </form>
-          <!-- Make this only one form for accessibility -->
-          <form class="hydration-user-volume">
             <label for="hydration-volume">Volume (oz):</label>
             <input type="number" name="hydration-volume" id="hydration-volume">
           </form>
-          <div class="error"></div>
-          <button class="hydration-submit">Submit</button>
+            <div class="error"></div>
+            <button class="hydration-submit">Submit</button>
         </div>
         <dl class="daily-hydration-cont">
           <dt class="daily-hydration-label1">Today you drank</dt>
-          <dd class="daily-hydration-label">Daily Hydration</dd>
+          <dd class="daily-hydration-label">---- ounces</dd>
         </dl>
         <select class="weekly-hydration-select" aria-labelledby="state">
           <option class="hydration-select">Click to Select a Date</option>
@@ -148,6 +148,7 @@
         </select>
       </article>
     </section>
+    <a id="motivation-link"></a>
     <section class="banner-box" id="sleep-banner">
       <p class="banner-text">· DONT LET YOUR DREAMS BE DREAMS ·</p>
     </section>
@@ -163,7 +164,7 @@
         <!-- <div class="right-style"> -->
         <h2 class="motivation-heading" id="h2-motivation">Motivation</h2>
         <div class="slide-cont">
-          <label class="slider-label" for="slider">Slide to indicate level of motivation</label>
+          <label class="slider-label" for="myRange">Slide to indicate level of motivation</label>
           <input class="slider" name="slider" type="range" min="0" max="10" value="0" step="2" id="slider">
           <img class="wavy-corner-png" src="./images/wavy-corner.png" alt="Wavy static image that fills corner or page" />
         </div>

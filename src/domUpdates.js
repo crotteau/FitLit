@@ -1,7 +1,9 @@
 //NOTE: Your DOM manipulation will occur in this file
-import { calculateAverageSteps, dailyOunces, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData, animateMotivation } from './scripts.js';
+import { calculateAverageSteps, weeklyOunces, findDailySleep, findWeeklyHours, findRecentWeek, findWeeklyQuality, calculateAvgQuality, calculateAvgHours, grabHydrationData, animateMotivation, findTodaysDate } from './scripts.js';
 
 import { getAllData } from './apiCalls.js';
+
+import { currentDate } from './scripts.js'
 
 const error = document.querySelector('.error')
 
@@ -10,6 +12,7 @@ const address = document.querySelector('.address-cont')
 const strideData = document.querySelector('.stride-data')
 const stepGoal = document.querySelector('.steps-goal-data')
 const avgStepGoal = document.querySelector('.global-steps-goal-data')
+const userFriends = document.querySelector('.user-friends')
 
 const dailyHydration = document.querySelector('.daily-hydration-label')
 const weeklyHydrationDate = document.querySelectorAll('.hydration-date')
@@ -33,46 +36,20 @@ const takeOff = document.querySelector('.take-off')
 window.addEventListener('load', getAllData)
 hydrationSelect.addEventListener('change', () => { checkIfSelected(userHydration, weeklyHoursSlept, weeklyQualitySlept) })
 sleepSelect.addEventListener('change', () => { checkIfSelected(userHydration, weeklyHoursSlept, weeklyQualitySlept) })
-hydrationSubmit.addEventListener('click', function(event) {
+hydrationSubmit.addEventListener('click', function (event) {
   event.preventDefault()
+  findTodaysDate()
   grabHydrationData(hydrationFormDate.value, hydrationFormOunces.value)
- })
+  resetInputField()
+})
 
 hydrationFormDate.addEventListener('click', removeError)
+hydrationFormOunces.addEventListener('click', removeError)
 
 sliderInput.addEventListener('change', () => { animateMotivation(sliderInput.value) })
 
-// function doShit(inputValue) {
-//   console.log(inputValue)
-//   console.log(typeof(inputValue))
-//   // if(inputValue === '2') {
-//   //   takeOff.style.animationName = "anim-1"
-//   // }
-//   let value = inputValue
-//   switch(value) {
-//     case '0': 
-//       takeOff.style.animationName = "anim-0";
-//       break;
-//     case '2': 
-//       takeOff.style.animationName = "anim-1";
-//       break;
-//     case '4': 
-//       takeOff.style.animationName = "anim-2";
-//       break;
-//     case '6': 
-//       takeOff.style.animationName = "anim-3";
-//       break;
-//     case '8': 
-//       takeOff.style.animationName = "anim-4";
-//       break;
-//     case '10': 
-//       takeOff.style.animationName = "anim-5";
-//       break;
-//   }
-// }
-
 function displayError() {
-  error.innerHTML += "<span style='color: red'>There was an unexpected error please try again</span>"
+  error.innerHTML = "<span style='color: red'>There was an unexpected error please try again</span>"
 }
 
 function removeError() {
@@ -88,6 +65,13 @@ function displayUserData(userInfo) {
     Email: ${userInfo.email} <br>
     Address: ${userInfo.address} <br>
   </address>`
+}
+
+function displayFriends(friends) {
+  for (var i = 0; i < friends.length; i++) {
+    userFriends.innerHTML += 
+    `<li class='friend'> ${friends[i]}</li>`
+  }
 }
 
 function displaySteps(userData) {
@@ -133,7 +117,7 @@ let userHydration;
 
 function displayHydrationData(hydration) {
   userHydration = weeklyOunces(hydration)
-  dailyHydration.innerText = dailyOunces(hydration)
+
 
   let dates = userHydration.map((object) => {
     return object.date
@@ -153,6 +137,21 @@ function displayHydrationData(hydration) {
   weeklyHydrationDate[4].value = dates[4]
   weeklyHydrationDate[5].value = dates[5]
   weeklyHydrationDate[6].value = dates[6]
+}
+
+function displayDailyHydration(userPost) {
+  if (userPost.numOunces && (userPost.date === currentDate)) {
+    dailyHydration.innerText = `${userPost.numOunces} ounces of water!`
+  } else if (userPost.date !== currentDate) {
+    error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter today's date!</span>"
+  } else if (!userPost.numOunces) {
+    error.innerHTML = "<span style='color: red; font-size: 1.5rem;'>Please enter ounces drank!</span>"
+  }
+}
+
+function resetInputField() {
+  hydrationFormDate.value = ''
+  hydrationFormOunces.value = ''
 }
 
 let weeklyHoursSlept;
@@ -191,9 +190,11 @@ function displaySleepData(sleep) {
 export {
   displayUserData,
   displayHydrationData,
+  displayDailyHydration,
   displaySleepData,
   displaySteps,
   calculateAvgQuality,
   displayError,
+  displayFriends,
   takeOff
 }

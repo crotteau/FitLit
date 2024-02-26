@@ -1,4 +1,4 @@
-# FitLit Week 8 Group Project: Part 1
+# FitLit Week 8 Group Project
 A site for users to view their personal fitness journey and track fitness goals.
 
 ### Background 
@@ -11,6 +11,28 @@ This website was made with the goal of implementing the use of fetch API for the
 - $ `npm start`
 - Navigate to http://localhost:8080/ in your browser
 
+### Contributors 
+[Asher Spurr](https://github.com/AsherSpurr)
+
+[Laura Long](https://github.com/lalonggone)
+
+[Megan Crotteau](https://github.com/crotteau)
+
+### Technologies Used
+Fitlit is made with JavaScript, HTML, and CSS. It's built using test-driven development with Mocha Testing Framework & Chai Assertion Library.
+- To run tests: `npm test` from associated root directory 
+
+### Original Project Spec Page
+A two part project for Turing School School of Software and Design: 
+- [Fitlit part 1](https://frontend.turing.edu/projects/module-2/fitlit-part-one-agile.html)
+- [Fitlit part 2](https://frontend.turing.edu/projects/module-2/fitlit-part-two-agile.html)
+
+## FitLit: Part 1
+
+### Screenshots: Initial CSS Styling
+![Screenshot 2024-02-12 at 5 44 21 PM](https://github.com/AsherSpurr/fitlit/assets/144856487/cefcfe08-ebfa-4fb5-a610-14ef913e60c0)
+
+
 ### Next steps 
 Additional enhancements could include:
 - Incorporate user authorization for real people to use
@@ -18,20 +40,24 @@ Additional enhancements could include:
 - Rethink selective color use to draw attention towards key information
 - Provide a secure user portal that displays personal contact information
 - Display friends list on a separate page with their current goals, allowing interaction between friends.
+  
 
-### Screenshots
-![Screenshot 2024-02-12 at 5 44 21 PM](https://github.com/AsherSpurr/fitlit/assets/144856487/cefcfe08-ebfa-4fb5-a610-14ef913e60c0)
+## FitLit: Part 2
 
-### Technologies Used
-Fitlit is made with JavaScript, HTML, and CSS. It's built using test-driven development with Mocha Testing Framework & Chai Assertion Library.
-- To run tests: `npm test` from associated root directory 
+### Screenshots - Updated CSS and Additional Features
 
-### Original Project Spec Page
-[Fitlit part 1](https://frontend.turing.edu/projects/module-2/fitlit-part-one-agile.html) from the Turing School of Software and Design
+### Motivation Feature
+Our assigned feature for part 2 was to allow the user to input how motivated they're feeling for any given day. We chose to create a simple design where the user can input their motivation level using a sliding scale. A little rocket animation will rise based on the input.  
+In the future we woud like to implement an API to display an encouraging quote if a user's motivation is below the halfway mark.
 
-### Contributors 
-[Asher Spurr](https://github.com/AsherSpurr)
+### Accessibility
+To assess our app's accessibility, we used exensions such as WAVE, Lighthouse, and Colorblind to look for areas of improvement. We also ensured that the user can tab through the app without using a mouse. Currently, our accessibility score is 96% according to Lighthouse. 
 
-[Laura Long](https://github.com/lalonggone)
-
-[Megan Crotteau](https://github.com/crotteau)
+### Usability
+We conducted user testing with our peers and listed below is some feedback we received.
+- Users want interactivity with static elements. Eg: changing profile picture, changing address
+- The correlation between the weekly date and data is not clear Eg: Click to select a date - then that data displaying next to it
+- More clarity needed for sleep quality scale Eg: defining range and meaning of scale
+- Exposed issues with creating dynamic and consistent CSS styling 
+- Parameters for daily hydration input could be more strict - prevent negative numbers and excessive number length
+- Links needed to be darker, the color was confusing to user’s since it matched the background

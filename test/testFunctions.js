@@ -22,6 +22,18 @@ function getRandomUser(usersData) {
     return randomUserId
 }
 
+function findFriends(targetUser, userData) {
+    var friends = [];
+    let friendIds = targetUser.friends
+    for (var i = 0; i < friendIds.length; i++) {
+      let friend = userData.users.find(user => {
+            return user.id === friendIds[i]
+        })
+        friends.push(friend.name)
+    }
+    return friends
+}
+
 function averageOunces(id) {
     var targetUser = hydrationSample.hydrationData.filter(user => user.userID === id)
     var sum = targetUser.reduce((acc, user) => {
@@ -148,4 +160,5 @@ export {
     findWeeklyQuality,
     findHoursSlept,
     findSleepQuality,
+    findFriends
 }

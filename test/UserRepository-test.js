@@ -18,7 +18,9 @@ import {
     findWeeklyHours,
     findWeeklyQuality,
     findHoursSlept,
-    findSleepQuality
+    findSleepQuality,
+    findFriends,
+    findTodaysDate
 } from './testFunctions';
 
 describe('find user info', () => {
@@ -43,7 +45,7 @@ describe('find user info', () => {
                 "email": "Taurean_Pollich31@gmail.com",
                 "strideLength": 4,
                 "dailyStepGoal": 7000,
-                "friends": [5, 43, 46, 11]
+                "friends": [2, 3, 4]
             });
         });
     });
@@ -60,6 +62,24 @@ describe('find user info', () => {
         });
     });
 
+    describe('findFriends', () => {
+        it('should find a specific user\'s friend list', function () {
+            const user = {
+                "id": 1,
+                "name": "Trystan Gorczany",
+                "address": "9484 Lucas Flat, West Kittymouth WA 67504",
+                "email": "Taurean_Pollich31@gmail.com",
+                "strideLength": 4,
+                "dailyStepGoal": 7000,
+                "friends": [2, 3, 4]
+            }
+            const userFriends = findFriends(user, userInfo)
+
+            expect(userFriends).to.deep.equal(['Tyreek VonRueden', 'Colt Rohan','Evie Satterfield'])
+
+        })
+    }
+    )
     describe('calculateAverageSteps', () => {
         it('should calculate average steps among all users', function () {
 
