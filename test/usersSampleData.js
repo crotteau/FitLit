@@ -7,10 +7,9 @@ export default { users: [
     "strideLength": 4,
     "dailyStepGoal": 7000,
     "friends": [
-      5,
-      43,
-      46,
-      11
+      2, 
+      3, 
+      4
     ]
   },
   {
@@ -21,8 +20,8 @@ export default { users: [
     "strideLength": 4.5,
     "dailyStepGoal": 9000,
     "friends": [
-      13,
-      19,
+      1,
+      5,
       3
     ]
   },
@@ -34,10 +33,10 @@ export default { users: [
     "strideLength": 2.7,
     "dailyStepGoal": 3000,
     "friends": [
-      31,
-      16,
-      15,
-      7
+      1,
+      2, 
+      4, 
+      5
     ]
   },
   {
@@ -48,9 +47,10 @@ export default { users: [
     "strideLength": 3.9,
     "dailyStepGoal": 4000,
     "friends": [
-      21,
-      32,
-      8
+      1, 
+      2, 
+      3, 
+      5
     ]
   },
   {
@@ -61,8 +61,8 @@ export default { users: [
     "strideLength": 3.3,
     "dailyStepGoal": 10000,
     "friends": [
-      5,
-      46
+      4,
+      3
     ]
   }
 ]};

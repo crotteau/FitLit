@@ -68,7 +68,7 @@ function findFriends(targetUser, userData) {
     var friends = [];
     let friendIds = targetUser.friends
     for (var i = 0; i < friendIds.length; i++) {
-      let friend = userData.users.find(user => {
+        let friend = userData.users.find(user => {
             return user.id === friendIds[i]
         })
         friends.push(friend.name)
@@ -180,13 +180,17 @@ function findWeeklyQuality(sleep, day) {
 var currentDate;
 function grabHydrationData(selectedDate, ounces) {
     let dateParsed = selectedDate.replace('-', '/').replace('-', '/')
-     let userPost = {userID: randomUserId,
-            date: dateParsed,
-            numOunces: ounces}
-            postData(userPost)
-            displayDailyHydration(userPost)
-        }
-        
+    let userPost = {
+        userID: randomUserId,
+        date: dateParsed,
+        numOunces: ounces
+    }
+    displayDailyHydration(userPost)
+    if (userPost.date && userPost.numOunces) {
+        postData(userPost)
+    }
+}
+
 function findTodaysDate() {
     let date = new Date()
     let day = date.getDate()
@@ -203,25 +207,25 @@ function findTodaysDate() {
 function animateMotivation(inputValue) {
     storeMotivation(inputValue)
     let value = inputValue
-    switch(value) {
-      case '0': 
-        takeOff.style.animationName = "anim-0";
-        break;
-      case '2': 
-        takeOff.style.animationName = "anim-1";
-        break;
-      case '4': 
-        takeOff.style.animationName = "anim-2";
-        break;
-      case '6': 
-        takeOff.style.animationName = "anim-3";
-        break;
-      case '8': 
-        takeOff.style.animationName = "anim-4";
-        break;
-      case '10': 
-        takeOff.style.animationName = "anim-5";
-        break;
+    switch (value) {
+        case '0':
+            takeOff.style.animationName = "anim-0";
+            break;
+        case '2':
+            takeOff.style.animationName = "anim-1";
+            break;
+        case '4':
+            takeOff.style.animationName = "anim-2";
+            break;
+        case '6':
+            takeOff.style.animationName = "anim-3";
+            break;
+        case '8':
+            takeOff.style.animationName = "anim-4";
+            break;
+        case '10':
+            takeOff.style.animationName = "anim-5";
+            break;
     }
 }
 
@@ -234,14 +238,6 @@ function storeMotivation(inputValue) {
     }
     return motivation
 }
-
-
-
-
-
-
-
-
 
 
 
