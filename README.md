@@ -45,6 +45,11 @@ Additional enhancements could include:
 ## FitLit: Part 2
 
 ### Screenshots - Updated CSS and Additional Features
+#### Hydration Section:
+![Hydration Section](https://github.com/AsherSpurr/fitlit/assets/149750476/18e515e7-1dd6-4528-93d9-8157bfe3a3ce)
+
+#### Sleep and Motivation Section:
+![Sleep and Motivation Section](https://github.com/AsherSpurr/fitlit/assets/149750476/10a95168-1a29-40ec-bbea-7b169c5e31a0)
 
 ### Motivation Feature
 Our assigned feature for part 2 was to allow the user to input how motivated they're feeling for any given day. We chose to create a simple design where the user can input their motivation level using a sliding scale. A little rocket animation will rise based on the input.  
