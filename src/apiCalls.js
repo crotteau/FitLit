@@ -1,4 +1,3 @@
-
 import { initiateUserFunctions, initiateHydrationFunctions, initiateSleepFunctions } from "./scripts"
 import { displayError } from "./domUpdates"
 
@@ -31,7 +30,6 @@ function postData(userPost) {
         }
     })
     .then(resp => resp.json())
-    .then(json => console.log('POST', json))
     .catch(err => {
         console.log(err)
         displayError()

@@ -19,8 +19,8 @@ import {
     findWeeklyQuality,
     findHoursSlept,
     findSleepQuality,
+    storeMotivation,
     findFriends,
-    findTodaysDate
 } from './testFunctions';
 
 describe('find user info', () => {
@@ -215,4 +215,19 @@ describe('find user info', () => {
             expect(e).to.equal(4.3)
         });
     });
+
+    describe('storeMotivation', () => {
+        it('should create a motivation object with specified userID, numeric motivation, and current date', () => {
+            const userId = 1;
+            const inputValue = 5;
+            const e = storeMotivation(userId, inputValue);
+    
+            expect(e).to.include.all.keys('userID', 'motivation', 'date');
+            expect(e.userID).to.equal(userId);
+            expect(e.motivation).to.be.a('number').that.equals(inputValue);
+            expect(e.date).to.be.a('date');
+
+        });
+    });
+
 });
