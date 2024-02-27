@@ -66,13 +66,14 @@ function displayUserData(userInfo) {
     Address: ${userInfo.address} <br>
   </address>`
 }
-
 function displayFriends(friends) {
+  var listContent = '';
   for (var i = 0; i < friends.length; i++) {
-    userFriends.innerHTML += 
-    `<li class='friend'> ${friends[i]}</li>`
+    listContent += `<li class='friend'>${friends[i]}</li>`;
   }
+  userFriends.innerHTML = listContent;
 }
+
 
 function displaySteps(userData) {
   avgStepGoal.innerText = calculateAverageSteps(userData)
