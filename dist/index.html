@@ -77,11 +77,12 @@
       <div class="hydration-left-cont">
         <div class="hydration-user-input">
           <h3>Add today's hydration data!</h3>
-          <form class="hydration-inputs">
+          <form class="hydration-inputs" aria-label="Enter hydration data">
             <label for="hydration-date">Date:</label>
             <input type="date" name="hydration-date" id="hydration-date">
             <label for="hydration-volume">Volume (oz):</label>
             <input type="number" name="hydration-volume" id="hydration-volume">
+            <span id="hydrationVolumeInstructions" class="visually-hidden">Enter the volume of water in ounces.</span>
           </form>
             <div class="error"></div>
             <button class="hydration-submit">Submit</button>
@@ -165,7 +166,7 @@
         <h2 class="motivation-heading" id="h2-motivation">Motivation</h2>
         <div class="slide-cont">
           <label class="slider-label" for="myRange">Slide to indicate level of motivation</label>
-          <input class="slider" name="slider" type="range" min="0" max="10" value="0" step="2" id="slider">
+          <input class="slider" name="slider" type="range" min="0" max="10" value="0" step="2" id="slider" aria-labelledby="hydrationVolumeInstructions">
           <img class="wavy-corner-png" src="./images/wavy-corner.png" alt="Wavy static image that fills corner or page" />
         </div>
         <!-- </div> -->
