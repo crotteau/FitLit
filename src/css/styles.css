@@ -32,7 +32,6 @@ header {
   display: flex;
   background-color: #FBF5E7;
   height: 5%;
-  /* justify-content: center; */
   border-radius: 12px;
 }
 
@@ -66,6 +65,7 @@ nav {
 .link:hover {
   color:#BC74F3
 }
+
 /*<><> Main user Data <><>*/
 /*<> Left <>*/
 
@@ -177,7 +177,6 @@ dt {
   font-size: 2em;
 }
 
-/* animation: 3s linear 1s infinite running slidein; */
 @keyframes stride-animation {
   from {
     width: 1vw;
@@ -291,7 +290,7 @@ h2 {
 }
 
 #hydration-data {
-  font-size: 6em;
+  font-size: 5em;
   position: absolute;
   top: 30%;
   left: 20%;                    
@@ -440,7 +439,6 @@ th {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* float: inline-end; */
   justify-content: space-around;
   min-height: 100%;
 }
@@ -532,10 +530,8 @@ th {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
   margin-left: 0;
   float: left;
-  /* min-height: 120vh; */
   width: fit-content;
   flex-wrap: nowrap;
 }
@@ -578,7 +574,6 @@ th {
   float: right;
   min-height: 100%;
   width: fit-content;
-  /* position: sticky; */
 }
 
 .slide-cont {
@@ -612,7 +607,6 @@ th {
   overflow-y: hidden;
   overflow-x: hidden;
   margin-bottom: -260px;
-  /* margin-right: -107px; */
   border-radius: 3%;
   margin-top: 100px;
   opacity: 80%;

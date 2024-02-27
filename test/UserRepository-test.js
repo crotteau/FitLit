@@ -21,7 +21,6 @@ import {
     findSleepQuality,
     storeMotivation,
     findFriends,
-    findTodaysDate
 } from './testFunctions';
 
 describe('find user info', () => {

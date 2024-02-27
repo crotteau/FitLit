@@ -65,7 +65,7 @@ function weeklyOunces(id) {
     return week
 };
 
-function findDailySleep(sleep) {
+function findDailySleep() {
     let targetUser = sleepSample.sleepData.filter((user) => {
         return user.userID === 1
     });
@@ -73,7 +73,7 @@ function findDailySleep(sleep) {
     return `${targetUser[index].date} : ${targetUser[index].hoursSlept}hrs | Sleep Quality: ${targetUser[index].sleepQuality}`
 };
 
-function calculateAvgHours(sleep) {
+function calculateAvgHours() {
     let totalHours = 0
     let userHoursSlept = sleepSample.sleepData.filter((user) => {
         return user.userID === 1
@@ -84,7 +84,7 @@ function calculateAvgHours(sleep) {
     return Math.round(totalHours / userHoursSlept.length)
 }
 
-function calculateAvgQuality(sleep) {
+function calculateAvgQuality() {
     let totalSleepQuality = 0
     let userSleepQuality = sleepSample.sleepData.filter((user) => {
         return user.userID === 1
@@ -95,7 +95,7 @@ function calculateAvgQuality(sleep) {
     return Math.round(totalSleepQuality / userSleepQuality.length)
 }
 
-function findRecentWeek(sleep) {
+function findRecentWeek() {
     let targetUser = sleepSample.sleepData.filter((user) => {
         return user.userID === 1
     }).reverse()
@@ -103,7 +103,7 @@ function findRecentWeek(sleep) {
     return recentWeekStart
 }
 
-function findWeeklyHours(sleep, day) {
+function findWeeklyHours(day) {
     let targetUser = sleepSample.sleepData.filter((user) => {
         return user.userID === 1
     })
@@ -117,7 +117,7 @@ function findWeeklyHours(sleep, day) {
     return weeklySleep
 }
 
-function findWeeklyQuality(sleep, day) {
+function findWeeklyQuality(day) {
     let targetUser = sleepSample.sleepData.filter((user) => {
         return user.userID === 1
     })
@@ -131,14 +131,14 @@ function findWeeklyQuality(sleep, day) {
     return weeklyQuality
 }
 
-function findHoursSlept(sleep, day) {
+function findHoursSlept(day) {
     let targetUser = sleepSample.sleepData.filter((user) => {
         return user.userID === 1
     }).find((user) => { return user.date === day })
     return targetUser.hoursSlept
 }
 
-function findSleepQuality(sleep, day) {
+function findSleepQuality(day) {
     let targetUser = sleepSample.sleepData.filter((user) => {
         return user.userID === 1
     }).find((user) => { return user.date === day })
