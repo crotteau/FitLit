@@ -304,7 +304,7 @@ h2 {
 #hydration-data {
   font-size: 6em;
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 20%;                    
 }
 
@@ -319,6 +319,11 @@ h2 {
 h3 {
   margin: 0;
   font: 1em;
+}
+
+.banner-text {
+  font-weight: 200;
+  font-size: 1.1em;
 }
 
 .weekly-hydration-select {
