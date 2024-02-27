@@ -56,7 +56,7 @@ Our assigned feature for part 2 was to allow the user to input how motivated the
 In the future, we would like to implement an API to display an encouraging quote if a user's motivation is below the halfway mark.
 
 ### Accessibility
-To assess our app's accessibility, we used extensions such as WAVE, Lighthouse, and Colorblind to look for areas of improvement. We also ensured that the user can tab through the app without using a mouse and that a screen reader can effectively navigate through the site. Currently, our accessibility score is 96% according to Lighthouse. 
+To assess our app's accessibility, we used extensions such as WAVE, Lighthouse, and Colorblind to look for areas of improvement. We also ensured that the user can tab through the app without using a mouse and that a screen reader can effectively navigate through the site. Currently, our accessibility score is 100% according to Lighthouse. 
 
 ### Usability
 We conducted user testing with our peers and listed below is some feedback we received.
