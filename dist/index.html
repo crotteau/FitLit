@@ -62,7 +62,7 @@
       </article>
     </section>
     <section class="banner-box">
-      <p class="banner-text">GET SWOLE · GET SWOLE · GET SWOLE</p>
+      <h1 class="banner-text">GET SWOLE · GET SWOLE · GET SWOLE</h1>
     </section>
     <a id="hydration-link"></a>
     <section class="hydration-container">
@@ -70,27 +70,28 @@
         <h2 class="hydration-heading" id="h2-hydration">Hydration</h2>
         <figure class="water-img-cont">
           <img src="./images/water-droplet.png" alt="Two overlapping water droplets" class="water-png">
-          <p id="hydration-data">----</p>
+          <h3 id="hydration-data">----</h3>
         </figure>
       </div>
       </div>
       <div class="hydration-left-cont">
         <div class="hydration-user-input">
           <h3>Add today's hydration data!</h3>
-          <form class="hydration-inputs">
+          <form class="hydration-inputs" aria-label="Enter hydration data">
             <label for="hydration-date">Date:</label>
             <input type="date" name="hydration-date" id="hydration-date">
             <label for="hydration-volume">Volume (oz):</label>
             <input type="number" name="hydration-volume" id="hydration-volume">
+            <span id="hydrationVolumeInstructions" class="visually-hidden">Enter the volume of water in ounces.</span>
           </form>
             <div class="error"></div>
             <button class="hydration-submit">Submit</button>
         </div>
-        <div class="daily-hydration-cont">
+        <dl class="daily-hydration-cont">
           <dt class="daily-hydration-label1">Today you drank</dt>
-          <dd class="daily-hydration-label">---- ounces</dt>
-        </div>
-        <select class="weekly-hydration-select">
+          <dd class="daily-hydration-label">---- ounces</dd>
+        </dl>
+        <select class="weekly-hydration-select" aria-label="Select a date to see your Weekly Hydration information">
           <option class="hydration-select">Click to Select a Date</option>
           <option class="hydration-date" value="weekly-date-data1"></option>
           <option class="hydration-date" value="weekly-date-data2"></option>
@@ -103,7 +104,7 @@
       </div>
     </section>
     <section class="banner-box" id="sleep-banner">
-      <p class="banner-text">· DONT LET YOUR DREAMS BE DREAMS ·</p>
+      <h1 class="banner-text">· DONT LET YOUR DREAMS BE DREAMS ·</h1>
     </section>
     <a id="sleep-link"></a>
     <section class="main-sleep-container">
@@ -126,17 +127,17 @@
         </div>
       </div>
       <article class="sleep-cont-right">
-        <div class="daily-sleep-cont">
+        <dl class="daily-sleep-cont">
           <dt class="daily-sleep-label">Last Night You Slept</dt>
           <dd class="daily-sleep-data">DAILY SLEEP DATA</dd>
-        </div>
-        <div class="avg-sleep-cont">
+        </dl>
+        <dl class="avg-sleep-cont">
           <dt class="avg-quality-label">Average Sleep Quality</dt>
           <dd class="avg-quality-data">N/A</dd>
           <dt class="avg-hours-label">Average Sleep Hours</dt>
           <dd class="avg-hours-data">N/A</dd>
-        </div>
-        <select class="weekly-sleep-select">
+        </dl>
+        <select class="weekly-sleep-select" aria-label="Select a date to see your Weekly Sleep information">
           <option class="sleep-select">Click to Select a Date</option>
           <option class="sleep-date" value="weekly-date-data1"></option>
           <option class="sleep-date" value="weekly-date-data2"></option>
@@ -150,7 +151,7 @@
     </section>
     <a id="motivation-link"></a>
     <section class="banner-box" id="sleep-banner">
-      <p class="banner-text">· DONT LET YOUR DREAMS BE DREAMS ·</p>
+      <h1 class="banner-text">· DONT LET YOUR DREAMS BE DREAMS ·</h1>
     </section>
     <section class="motivation">
       <section class="motivation-left">
@@ -164,9 +165,9 @@
         <!-- <div class="right-style"> -->
         <h2 class="motivation-heading" id="h2-motivation">Motivation</h2>
         <div class="slide-cont">
-          <label class="slider-label" for="myRange">How motivated are you today?</label>
-          <input class="slider" name="slider" type="range" min="0" max="10" value="0" step="2" id="myRange">
-          <img class="wavy-corner-png" src="./images/wavy-corner.png" />
+          <label class="slider-label" for="slider">Slide to indicate level of motivation</label>
+          <input class="slider" name="slider" type="range" min="0" max="10" value="0" step="2" id="slider" aria-labelledby="hydrationVolumeInstructions">
+          <img class="wavy-corner-png" src="./images/wavy-corner.png" alt="Wavy static image that fills corner or page" />
         </div>
         <!-- </div> -->
       </section>
