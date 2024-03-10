@@ -4,6 +4,9 @@ A site for users to view their fitness journey and track fitness goals.
 ### Background 
 This website was made to implement the use of fetch API for the first time. This project had no comp so it was up to us to create  design and layout. We took inspiration from 80's fitness and 2000's graphics. Keeping the website simple in its functionality and robust in its colors. This website is not a 'functioning: website. All the data comes from a random data set made for this project. No users are real, and users cannot navigate to find specific information. Users are displayed in a random order.
 
+### Deployed Link
+To view the webpage, visit this [link](https://crotteau.github.io/FitLit/)
+
 ### Installation
 - Visit the [FitLit repository](https://github.com/AsherSpurr/fitlit)
 - $ `git clone git@github.com:AsherSpurr/fitlit.git`
